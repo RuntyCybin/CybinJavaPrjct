@@ -1,5 +1,5 @@
 # CybinJavaPrjct
-Still nothing but its comming
+Project started, stay aware of the updates
 
 Model:
 Users
