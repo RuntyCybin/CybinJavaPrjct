@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url:jdbc:h2:mem:cybindb
-    driverClassName:org.h2.Driver
-    username:demo
-    password:password
-  jpa:
-    database-platform:org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization:true
+    username: demo
+    url: jdbc:h2:mem:cybindb
+    driverClassName: org.h2.Driver
+    password: password
   h2:
     console:
-      enabled:true
+      enabled: 'true'
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: 'true'
