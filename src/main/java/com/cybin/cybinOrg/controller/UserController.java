@@ -1,5 +1,9 @@
-package com.cybin.cybinOrg;
+package com.cybin.cybinOrg.controller;
 
+import com.cybin.cybinOrg.service.UserService;
+import com.cybin.cybinOrg.dto.UserRequestDTO;
+import com.cybin.cybinOrg.entity.User;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +19,9 @@ public class UserController {
 
     @PostMapping("/add")
     public ResponseEntity<User> addUser(
-            @RequestBody User newUser
-    ) {
-        User createdUser = userService.createUser(newUser);
-        return new ResponseEntity<>(createdUser, HttpStatus.OK);
+            @RequestBody @Valid UserRequestDTO newUser) {
+        return new ResponseEntity<>(
+                userService.createUser(newUser),
+                HttpStatus.CREATED);
     }
 }
