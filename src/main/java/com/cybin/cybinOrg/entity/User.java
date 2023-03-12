@@ -1,4 +1,4 @@
-package com.cybin.cybinOrg;
+package com.cybin.cybinOrg.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,13 +13,13 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @Id
-    @Column(name = "usersid")
-    @GeneratedValue( strategy= GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String usersname;
+    @Column(name = "USERNAME")
+    private String userName;
 
-    @ManyToOne
-    @JoinColumn(name = "roleid")
-    private Role roleid;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ROLE")
+    private Role roleId;
 }

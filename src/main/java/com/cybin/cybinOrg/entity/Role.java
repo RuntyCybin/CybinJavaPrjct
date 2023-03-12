@@ -1,4 +1,4 @@
-package com.cybin.cybinOrg;
+package com.cybin.cybinOrg.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "USERROLES")
+@Table(name = "role")
 public class Role {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
-    @Column(name = "roleid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String rolename;
+    @Column(name = "ROLENAME")
+    private String roleName;
 }
