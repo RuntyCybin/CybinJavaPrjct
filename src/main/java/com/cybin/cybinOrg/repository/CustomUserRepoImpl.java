@@ -1,4 +1,4 @@
-package com.cybin.cybinOrg;
+package com.cybin.cybinOrg.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -9,14 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class CustomUserRepoImpl implements CustomUserRepo {
 
-
     @PersistenceContext
     EntityManager entityManager;
-    @Override
-    public User createUser(User user) {
 
-
-
-        return null;
-    }
 }
