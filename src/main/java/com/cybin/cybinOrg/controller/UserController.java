@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -19,9 +20,17 @@ public class UserController {
 
     @PostMapping("/add")
     public ResponseEntity<User> addUser(
-            @RequestBody @Valid UserRequestDTO newUser) {
+            @RequestBody @Valid UserRequestDTO newUser
+    ) {
         return new ResponseEntity<>(
                 userService.createUser(newUser),
                 HttpStatus.CREATED);
+    }
+
+    @GetMapping("/findUser")
+    public ResponseEntity<User> findUser(
+            @RequestBody @Valid UserRequestDTO findUser
+    ) {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
