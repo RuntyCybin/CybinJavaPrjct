@@ -16,6 +16,7 @@ public class UserRequestDTO implements Serializable {
 
     @NotNull(message = "username cannot be null")
     private String username;
+
     @Min(1)
     @Max(2)
     @NotNull(message = "role id cannot be null, 1 or 2")
